@@ -1,0 +1,7 @@
+Feature: Search the content using category filtering on bing.com
+
+  Scenario: do a search for "Prowly Media Monitoring" with content category filtering
+    Given I am on the website bing.com 
+    When I write the phrase "Prowly Media Monitoring" into the search bar
+    And I click on the search button
+    Then the search results page should be displayed
