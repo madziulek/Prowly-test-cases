@@ -5,3 +5,13 @@ Feature: Search the content using category filtering on bing.com
     When I write the phrase "Prowly Media Monitoring" into the search bar
     And I click on the search button
     Then the search results page should be displayed
+
+  Scenario: Filter search results by "Videos" content category
+    Given I am on the search results page for "Prowly Media Monitoring"
+    When I select the "Videos" content category filter
+    Then the search results should include only videos related to "Prowly Media Monitoring"
+
+  Scenario: Filter search results by "News" content category
+    Given I am on the search results page for "Prowly Media Monitoring"
+    When I select the "News" content category filter
+    Then the search results should include only news articles related to "Prowly Media Monitoring"
