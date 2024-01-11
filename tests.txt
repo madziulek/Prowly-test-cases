@@ -1,0 +1,31 @@
+Feature: Search the content using category filtering on bing.com
+
+  Scenario: do a search for "Prowly Media Monitoring" with content category filtering
+    Given I am on the website bing.com 
+    When I write the phrase "Prowly Media Monitoring" into the search bar
+    And I click on the search button
+    Then the search results page should be displayed
+
+  Scenario: Filter search results by "Videos" content category
+    Given I am on the search results page for "Prowly Media Monitoring"
+    When I select the "Videos" content category filter
+    Then the search results should include only videos related to "Prowly Media Monitoring"
+
+  Scenario: Filter search results by "News" content category
+    Given I am on the search results page for "Prowly Media Monitoring"
+    When I select the "News" content category filter
+    Then the search results should include only news articles related to "Prowly Media Monitoring"
+
+
+Feature: Use "Copilot" on bing.com to get Information about Prowly's Media Monitoring Module
+
+  Scenario: Initiate Copilot assistance for searching information about Prowly's media monitoring module
+    Given I am on the bing.com homepage
+    When I activate Copilot for assistance
+    And I ask Copilot to search for information about the media monitoring module in Prowly
+    Then Copilot should provide relevant search results
+
+  Scenario: Review search results provided by Copilot
+    Given Copilot provided search results about the media monitoring module in Prowly
+    When I review the search results
+    Then I should see information related to the features and functionalities of Prowly's media monitoring module
